@@ -1,0 +1,10 @@
+[Unit]
+Description=Cowtune service at port 6969
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/cowtune/cowtune.pl 6969
+
+[Install]
+WantedBy=multi-user.target

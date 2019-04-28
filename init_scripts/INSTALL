@@ -1,0 +1,18 @@
+#
+# Installation on openSUSE 13.2
+#-----------------------------
+
+cp cowtune.service /usr/lib/systemd/system/cowtune.service
+cd /etc/systemd/system/
+ln -s /usr/lib/systemd/system/cowtune.service cowtune.service
+systemctl daemon-reload
+systemctl start cowtune.service
+systemctl enable cowtune.service
+
+#
+# Installation on Debian 7
+#-----------------------------
+cp cowtune /etc/init.d/cowtune
+update-rc.d cowtune defaults
+service cowtune start
+
